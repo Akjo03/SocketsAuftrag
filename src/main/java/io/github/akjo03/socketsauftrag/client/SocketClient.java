@@ -12,7 +12,12 @@ public class SocketClient {
 	private PrintWriter out;
 	private BufferedReader in;
 
-	public static void main(String[] args) { }
+	public static void main(String[] args) throws IOException {
+		SocketClient client = new SocketClient();
+		client.startConnection("localhost", 8090);
+		String resp = client.sendMessage("Good afternoon");
+		System.out.println(resp);
+	}
 
 	public void startConnection(String ip, int port) throws IOException {
 		clientSocket = new Socket(ip, port);

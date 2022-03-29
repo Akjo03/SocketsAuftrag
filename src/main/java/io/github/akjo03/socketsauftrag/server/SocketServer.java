@@ -1,11 +1,14 @@
 package io.github.akjo03.socketsauftrag.server;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class SocketServer implements Runnable {
+	private PrintWriter out;
+
 	private SocketServer() {}
 
 	public static void main(String[] args) {
@@ -25,7 +28,9 @@ public class SocketServer implements Runnable {
 				Socket socket = server.accept();
 				sc = new Scanner(socket.getInputStream());
 
-				System.out.println(sc.toString());
+				System.out.println(sc.nextLine());
+				out.println("Cool message!");
+
 			}
 
 
