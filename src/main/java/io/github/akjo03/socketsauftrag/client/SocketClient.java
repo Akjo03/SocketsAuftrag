@@ -15,7 +15,7 @@ public class SocketClient {
 	public static void main(String[] args) throws IOException {
 		SocketClient client = new SocketClient();
 		client.startConnection("localhost", 8090);
-		client.sendMessage("(Client) How are you server?");
+		client.sendMessage("Justin Ceronio, Timo Maibach, Lukas Küffer, Aline Ammann");
 	}
 
 	public void startConnection(String ip, int port) throws IOException {
