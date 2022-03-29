@@ -1,41 +1,28 @@
 package io.github.akjo03.socketsauftrag.server;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import lombok.SneakyThrows;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class SocketServer implements Runnable {
-	private PrintWriter out;
-
-	private SocketServer() {}
 
 	public static void main(String[] args) {
 		Thread ServerStart = new Thread(new SocketServer());
 		ServerStart.run();
 	}
 
+	@SneakyThrows
 	@Override
 	public void run() {
+		Scanner sc;
+		ServerSocket server = new ServerSocket(8090 );
+		System.out.println("(Server) Server running at: " + server.getLocalPort());
 
-		try {
-			Scanner sc;
-			ServerSocket server = new ServerSocket(8090 );
-			System.out.println("(Server) Server running at: " + server.getLocalPort());
-
-			while (true) {
-				Socket socket = server.accept();
-				sc = new Scanner(socket.getInputStream());
-
-				System.out.println(sc.nextLine());
-				out.println("Cool message!");
-
-			}
-
-
-		} catch (Exception e) {
-
+		while (true) {
+			Socket socket = server.accept();
+			sc = new Scanner(socket.getInputStream());
+			System.out.println(sc.nextLine()); // print response
 		}
 	}
 }

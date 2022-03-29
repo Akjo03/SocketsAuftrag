@@ -15,8 +15,7 @@ public class SocketClient {
 	public static void main(String[] args) throws IOException {
 		SocketClient client = new SocketClient();
 		client.startConnection("localhost", 8090);
-		String resp = client.sendMessage("Good afternoon");
-		System.out.println(resp);
+		client.sendMessage("(Client) How are you server?");
 	}
 
 	public void startConnection(String ip, int port) throws IOException {
