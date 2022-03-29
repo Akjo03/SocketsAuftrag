@@ -9,6 +9,9 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <name>Sockets Auftrag - Modul 207</name>
+    <description>Small project with sockets for GIBB module 207.</description>
+
     <licenses>
         <license>
             <name>GNU General Public License v3.0</name>
@@ -30,10 +33,6 @@
         <developer>
             <id>a_ammann</id>
             <name>Aline Ammann</name>
-        </developer>
-        <developer>
-            <id>t_maibach</id>
-            <name>Timo Maibach</name>
         </developer>
         <developer>
             <id>j_ceronio</id>
